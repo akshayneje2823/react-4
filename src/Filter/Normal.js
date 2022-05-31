@@ -1,16 +1,10 @@
-import React,{useState} from 'react'
-import './App.css'
-import Table from './Table';
+import React, { useState } from 'react';
+import './App.css';
 import { Users } from './users';
 
 
-function App() {
+function Normal() {
   const [query, setQuery] = useState("");
-
-//    Filter Data
-    const search = (data) =>{
-        return data.filter((item)=> item.first_name.toLowerCase().includes(query))
-    }
 
   // console.log(Users.filter(user => user.first_name.toLowerCase().includes("fe")));
   return (
@@ -19,9 +13,17 @@ function App() {
         placeholder="Search..."
         className="search"
         onChange={(e) => setQuery(e.target.value)} />
-        <Table data={search(Users)}/>
+      <ul className='list'>
+        {Users.filter(user=>user.first_name.toLowerCase().includes(query)).map((data) => (
+          <li className='listitem'
+            key={data.id}>
+            {data.first_name}
+          </li>
+        ))}
+
+      </ul>
     </div>
   )
 }
 
-export default App
+export default Normal
