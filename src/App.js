@@ -1,25 +1,17 @@
-import React,{useState} from 'react'
-import './App.css'
-import Table from './Table';
-import { Users } from './users';
-
+import React,{useState} from 'react';
+import "./App.css";
+import Table from './Filter/Table form/Table';
 
 function App() {
-  const [query, setQuery] = useState("");
-
-//    Filter Data
-    const search = (data) =>{
-        return data.filter((item)=> item.first_name.toLowerCase().includes(query))
-    }
-
-  // console.log(Users.filter(user => user.first_name.toLowerCase().includes("fe")));
+  const [Quary, setQuary] = useState("")
   return (
     <div className='app'>
-      <input type="text"
-        placeholder="Search..."
-        className="search"
-        onChange={(e) => setQuery(e.target.value)} />
-        <Table data={search(Users)}/>
+      <input
+      className='search'
+      placeholder="Search..."
+      onChange={(e)=>setQuary(e.target.value)}
+      />
+      {<Table data={[]}/>}
     </div>
   )
 }

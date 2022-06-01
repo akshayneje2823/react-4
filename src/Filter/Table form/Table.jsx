@@ -3,7 +3,7 @@ import React from 'react';
 
 function Table({ data }) {
   return (
-    <table class="table table-hover mt-4">
+    <table className="table table-hover mt-4">
       <thead>
         <tr>
           <th scope="col">ID</th>
