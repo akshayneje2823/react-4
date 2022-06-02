@@ -1,18 +1,13 @@
-import React,{useState} from 'react';
-import "./App.css";
-import Table from './Filter/Table form/Table';
+import React from 'react';
+import CurrencyRow from './CurrencyRow';
 
 function App() {
-  const [Quary, setQuary] = useState("")
   return (
-    <div className='app'>
-      <input
-      className='search'
-      placeholder="Search..."
-      onChange={(e)=>setQuary(e.target.value)}
-      />
-      {<Table data={[]}/>}
-    </div>
+    <>
+    <h1>Convert</h1>
+    <CurrencyRow/>
+    
+    </>
   )
 }
 
